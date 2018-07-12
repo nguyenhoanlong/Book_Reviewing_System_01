@@ -12,8 +12,13 @@ en:
       login: "Login"
       list_follow: "List Follow"
       list_request: "List request"
+      register: "Register"
   home:
     title_book_demo: "Tam Quốc Diễn Nghĩa"
     top_rate: "Top Rate"
     top_review: "Top Review"
     top_read: "Top Read"
+  user: 
+    email: "Email"
+    name: "Name"
+    phone: "Phone"
