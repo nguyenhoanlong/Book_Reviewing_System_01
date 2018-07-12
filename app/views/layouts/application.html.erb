@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Demo4</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+    <title><%= t "layout.header.home" %></title>
+    <%= render "layouts/rails_default" %>
   </head>
-
   <body>
-    <%= yield %>
+    <% flash.each do |message_type, content_messages| %>
+      <div class="alert alert-<%= message_type %>"><%= content_messages %></div>
+    <% end %>
+    <%= render "layouts/header" %>
+    <div class="container">
+      <%= yield %>
+      <%= render "layouts/footer" %>
+    </div>
   </body>
 </html>
