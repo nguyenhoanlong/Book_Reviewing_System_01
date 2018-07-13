@@ -1,0 +1,14 @@
+<tr>
+  <td><%= index_record @requests.index(request), Settings.paginate_page, params[:page].to_i %></td>
+  <td><%= request.name_book %></td>
+  <td class="text-center"><%= request.created_at %></td>
+  <td class="text-center">
+    <%= status_request(request.status).html_safe %>
+  </td>
+  <td class="text-center">
+    <%= link_to (t "books.view"), request_path(request) %> |
+    <%= link_to (t "books.edit"), edit_request_path(request) %> |
+    <%= link_to (t "books.delete"), request_path(request), method: :delete,
+      data: {confirm: (t "books.confirm")} %>
+  </td>
+</tr>

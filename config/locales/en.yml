@@ -1,4 +1,10 @@
 en:
+  update_success: "Update successfully"
+  delete_success: "Delete successfully"
+  delete_faild: "Delete fail"
+  permission: "You don't have permission"
+  update: "Update"
+  please_login: "Please Login"
   layout:
     header:
       home: "Home"
@@ -14,6 +20,7 @@ en:
       list_request: "List request"
       register: "Register"
       title: "Framgia Review book"
+      handler_request: "Handle request"
   home:
     title_book_demo: "Tam Quốc Diễn Nghĩa"
     top_rate: "Top Rate"
@@ -51,3 +58,16 @@ en:
     list_book: "List books"
     confirm: "Are yout sure?"
     category: "Category"
+    request_new_book: "Request a new book"
+    create: "Create new book"
+  requests:
+    form_request: "Form request book"
+    request_at: "Request at"
+    status: "Status"
+    list_request: "List request books"
+    in_progess: "In Progress"
+    done: "Done"
+    name_book: "Name books"
+    created_at: "Created at"
+    user_request: "User request"
+    create: "Create new request"

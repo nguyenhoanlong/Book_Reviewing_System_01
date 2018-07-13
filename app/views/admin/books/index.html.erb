@@ -12,7 +12,7 @@
         <th scope="col" class="text-center"><%= t "books.category" %></th>
         <th scope="col" class="text-center"><%= t "books.created_at" %></th>
         <th scope="col" class="text-center">
-          <%= link_to "<button type='button' class='btn btn-success'>+</button>".html_safe, new_admin_book_path, title: (t "books.add") %>
+          <%= link_to "+", new_admin_book_path, class: "btn btn-success" %>
         </th>
       </tr>
     </thead>

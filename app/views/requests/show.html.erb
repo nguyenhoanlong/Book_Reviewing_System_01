@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h3> <%= t "name_book" %>: <%= @request.name_book %></h3>
+    <small class="area-status-left"><%= t "request.status" %>: <%= status_request(@request.created_at).html_safe %></small>
+    <small class="area-created-right"><i><%= t "request.created_at" %>: <%= @request.created_at %></i></small>
+    <p><%= @request.content %></p>
+  </div>
+</div>
