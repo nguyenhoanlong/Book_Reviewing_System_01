@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= t "layout.header.home" %></title>
+    <title><%= full_title yield :title %></title>
     <%= render "layouts/rails_default" %>
   </head>
   <body>
-    <% flash.each do |message_type, content_messages| %>
-      <div class="alert alert-<%= message_type %>"><%= content_messages %></div>
-    <% end %>
     <%= render "layouts/header" %>
     <div class="container">
+      <% flash.each do |message_type, content_messages| %>
+        <div class="alert alert-<%= message_type %>"><%= content_messages %></div>
+      <% end %>
       <%= yield %>
     </div>
     <%= render "layouts/footer" %>

@@ -1,1 +1,5 @@
 maximum_phone: 11
+width_thumb_book: 300
+height_thumb_book: 400
+paginate_page: 10
+validate_size_image: 4

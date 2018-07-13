@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_13_013337) do
+ActiveRecord::Schema.define(version: 2018_07_13_043232) do
 
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -89,10 +89,10 @@ ActiveRecord::Schema.define(version: 2018_07_13_013337) do
   end
 
   create_table "user_books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.boolean "read"
-    t.boolean "favorite"
-    t.boolean "reading"
-    t.boolean "request"
+    t.boolean "read", default: false
+    t.boolean "favorite", default: false
+    t.boolean "reading", default: false
+    t.boolean "request", default: false
     t.bigint "user_id"
     t.bigint "book_id"
     t.datetime "created_at", null: false
@@ -108,10 +108,10 @@ ActiveRecord::Schema.define(version: 2018_07_13_013337) do
     t.text "activation_digest"
     t.text "password_digest"
     t.string "avatar"
-    t.boolean "admin"
+    t.boolean "admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "activated"
+    t.boolean "activated", default: false
   end
 
   add_foreign_key "books", "categories"

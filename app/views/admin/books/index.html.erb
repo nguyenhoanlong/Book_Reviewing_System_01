@@ -1,0 +1,24 @@
+<center>
+  <h1><%= t "books.list_book" %></h1>
+</center>
+<div class="col-md-10 col-md-offset-1">
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col" class="text-center">#</th>      
+        <th scope="col" class="text-center"><%= t "books.name" %></th>
+        <th scope="col" class="text-center"><%= t "books.author" %></th>
+        <th scope="col" class="text-center"><%= t "books.category" %></th>
+        <th scope="col" class="text-center"><%= t "books.created_at" %></th>
+        <th scope="col" class="text-center">
+          <%= link_to "<button type='button' class='btn btn-success'>+</button>".html_safe, new_admin_book_path, title: (t "books.add") %>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @books %>
+    </tbody>
+  </table>
+  <%= paginate @books, theme: "twitter-bootstrap-3" %>
+</div>
