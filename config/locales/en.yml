@@ -12,8 +12,21 @@ en:
       login: "Login"
       list_follow: "List Follow"
       list_request: "List request"
+      register: "Register"
   home:
     title_book_demo: "Tam Quốc Diễn Nghĩa"
     top_rate: "Top Rate"
     top_review: "Top Review"
     top_read: "Top Read"
+  users:
+    new:
+      create: "Create"
+      confirmation: "Confirmation"
+      the_from: "The form"
+    create:
+      check_email: "Please check your email to activate your account."
+    user_mailer:
+      account_activation: "Account activation"
+      hi: "Hi"
+      welcome: "Welcome to the Framgia Book Review! Click on the link below to activate your account: "
+      activate: "Activate"
