@@ -1,0 +1,13 @@
+<tr>
+  <td><%= index_record @books.index(book), Settings.paginate_page, params[:page].to_i %></td>
+  <td><%= book.name %></td>
+  <td><%= book.author %></td>
+  <td class="text-center"><%= book.category.title %></td>
+  <td class="text-center"><%= book.created_at %></td>
+  <td class="text-center">
+    <%= link_to (t "books.view"), admin_book_path(book) %> |
+    <%= link_to (t "books.edit"), edit_admin_book_path(book) %> |
+    <%= link_to (t "books.delete"), admin_book_path(book), method: :delete,
+      data: {confirm: (t "books.confirm")} %>
+  </td>
+</tr>
