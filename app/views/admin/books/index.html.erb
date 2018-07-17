@@ -2,7 +2,15 @@
   <h1><%= t "books.list_book" %></h1>
 </center>
 <div class="col-md-10 col-md-offset-1">
-
+  <%= form_tag admin_books_path, method: :get, id: "form_filter" do %>
+    <div class="col-md-6">
+      <%= text_field_tag "txt_filter_book", nil, class: "form-control txt_filter_book", placeholder: (t "type_something"), id: "txt_filter_book" %>
+    </div>
+    <div class="col-md-6">
+      <%= select_tag "category", options_from_collection_for_select(Category.all, "id", "title", params[:category]),
+        class: "form-control", include_blank: "Show all book" %>
+    </div>
+  <% end %>
   <table class="table table-hover">
     <thead>
       <tr>
@@ -16,7 +24,7 @@
         </th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="table-book">
       <%= render @books %>
     </tbody>
   </table>

@@ -1,4 +1,5 @@
 en:
+  type_something: "Type sonething"
   update_success: "Update successfully"
   update_fail: "Update fail"
   delete_success: "Delete successfully"
@@ -16,6 +17,7 @@ en:
       list_cat: "List categories"
       list_user: "List User"
       search: "Search"
+      placeholder_search: "Search by Book name or Author"
       action: "Action"
       change_infor: "Change information"
       logout: "Logout"
@@ -64,6 +66,7 @@ en:
     category: "Category"
     request_new_book: "Request a new book"
     create: "Create new book"
+    more_than: "File images more than 4MB"
   requests:
     form_request: "Form request book"
     request_at: "Request at"
@@ -91,3 +94,4 @@ en:
     read: "Read"
     reading: "Reading"
     list_mark: "List mark "
+    search_result: "Result search by keyword: "

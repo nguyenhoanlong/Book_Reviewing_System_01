@@ -1,10 +1,16 @@
 class Admin::BooksController < ApplicationController
-  before_action :verify_admin, only: %i(new add update edit destroy)
+  before_action :verify_admin, only: %i(new index add update edit destroy)
   before_action :load_book, only: %i(show update edit destroy)
 
   def index
-    @books = Book.list_book
-                 .page(params[:page]).per Settings.paginate_page
+    books = Book.like_by_name_author(params[:keyword])
+    books = Book.filter_by_category(params[:cat_id]) unless params[:cat_id].blank?
+    respond_to do |format|
+      format.js
+      format.html
+    end
+    @books = books.ordered.page(params[:page])
+      .per Settings.paginate_page
   end
 
   def new
