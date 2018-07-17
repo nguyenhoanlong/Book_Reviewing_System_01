@@ -44,6 +44,8 @@ en:
       hi: "Hi"
       welcome: "Welcome to the Framgia Book Review! Click on the link below to activate your account: "
       activate: "Activate"
+    show:
+      show_info: "Detail information"
   sessions:
     login_fail: "Incorrect email or password"
     login_success: "Login is successfully"
@@ -95,3 +97,12 @@ en:
     reading: "Reading"
     list_mark: "List mark "
     search_result: "Result search by keyword: "
+  relationships:
+    follow_sucess: "Follow successfully"
+    follow_fail: "Follow fail"
+    list_follow: "List Follower"
+    follow: "Follow"
+    following: "Following"
+    name: "Full name"
+    email: "Email"
+    phone: "Phone"

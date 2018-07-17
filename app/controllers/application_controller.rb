@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   private
 
   def verify_admin
-    return if is_admin?
+    return if logged_in? && is_admin?
     flash[:danger] = t "permission"
     redirect_to root_url
   end

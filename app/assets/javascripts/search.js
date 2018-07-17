@@ -4,7 +4,7 @@ $(document).on('turbolinks:load', function(){
     if (search != '') {
       $('.ul-result_search').css('display', 'block')
       $.ajax({
-        url: 'search_books',
+        url: '/search_books',
         method: 'GET',
         data: {search: search},
       })

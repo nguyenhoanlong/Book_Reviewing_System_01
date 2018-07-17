@@ -1,0 +1,33 @@
+<center>
+  <h1><%= t "users.show.show_info" %></h1>
+</center>
+<div class="row">
+  <div class="col-md-4">
+    <center>
+    <% if !@user.avatar.thumb.url.nil? %>
+      <%= image_tag @user.avatar.thumb.url, class: "img-avatar", style: "width: 150px" %><br>
+    <% end %>
+      <%= t "relationships.follow" %>: <span id="followers"><%= @user.followers.count %></span>
+      <%= t "relationships.following" %>: <span id="following"><%= @user.following.count %></span>
+    </center>
+  <% if @user != current_user %>
+    <div id="form-relationship">
+      <%= render "form_relationship" %>
+    </div>
+  <% end %>
+  <hr>
+  <%= t "relationships.name" %> : <%= @user.name %>
+  <hr>
+  <%= t "relationships.email" %>: <%= @user.email %>
+  <hr>
+  <%= t "relationships.phone" %>: <%= @user.phone %>
+  <hr>
+  </div>
+  <div class="col-md-8"></div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-8">
+  </div>
+</div>
