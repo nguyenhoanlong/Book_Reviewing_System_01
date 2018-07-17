@@ -6,9 +6,9 @@
     <%= status_request(request.status).html_safe %>
   </td>
   <td class="text-center">
-    <%= link_to (t "books.view"), request_path(request) %> |
-    <%= link_to (t "books.edit"), edit_request_path(request) %> |
+    <%= link_to (t "books.view"), request_path(request), class: "btn btn-primary btn-sm" %>
+    <%= link_to (t "books.edit"), edit_request_path(request), class: "btn btn-warning btn-sm" %>
     <%= link_to (t "books.delete"), request_path(request), method: :delete,
-      data: {confirm: (t "books.confirm")} %>
+      data: {confirm: (t "books.confirm")}, class: "btn btn-danger btn-sm" %>
   </td>
 </tr>

@@ -1,5 +1,6 @@
 en:
   update_success: "Update successfully"
+  update_fail: "Update fail"
   delete_success: "Delete successfully"
   delete_faild: "Delete fail"
   permission: "You don't have permission"
@@ -81,3 +82,12 @@ en:
     update_fail: "Update review is fail"
   rating:
     not_found_rating: "Not found rating"
+  mark:
+    mark: "Mark this book"
+    list_favorite: "List book favorite"
+    list_read: "List book read"
+    list_reading: "List book reading"
+    favorite: "Favorite"
+    read: "Read"
+    reading: "Reading"
+    list_mark: "List mark "

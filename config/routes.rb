@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :books, only: %i(show) do 
     resources :ratings
+    resources :user_books
   end
+  resources :mark_books, only: %i(index)
   resources :users
   resources :requests
   resources :my_requests, only: %i(index)
