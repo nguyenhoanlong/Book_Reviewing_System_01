@@ -13,6 +13,7 @@
     <div class="col-md-12">
       <%= rating.content %>
       <center>
+        <%= link_to (t "comment.comment"), new_book_rating_comment_path(rating.book, rating), class: "btn btn-primary btn-sm", remote: true %>
         <%= link_to (t "edit"), edit_book_rating_path(rating.book, rating), class: "btn btn-success btn-sm" %>
         <%= link_to (t "delete"), book_rating_path(rating.book, rating), method: :delete, 
           data: {confirm: (t "confirm")}, class: "btn btn-danger btn-sm delete-review",

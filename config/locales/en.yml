@@ -79,3 +79,5 @@ en:
     create_fail: "Add new review is fail"
     update_success: "Update review is successfully"
     update_fail: "Update review is fail"
+  comment:
+    comment: "Comment"

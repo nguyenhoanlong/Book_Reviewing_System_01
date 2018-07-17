@@ -1,0 +1,10 @@
+<%= form_for [@book, @rating, @comment] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <div class="form-group">
+    <%= f.label :content %>
+    <%= f.text_field :content, class: "form-control" %>
+  </div>
+
+  <%= f.submit (t "users.new.create"), class: "btn btn-primary" %> </br>
+<% end %>
