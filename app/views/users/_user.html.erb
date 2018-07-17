@@ -1,0 +1,12 @@
+<div class="col-md-6">
+  <div class="content">
+    <div class="col-md-3">
+      <% if !user.avatar.thumb.url.nil? %>
+        <%= image_tag user.avatar.thumb.url, class: "img-avatar", style: "width: 65px" %>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <%= link_to user.name, user %>
+    </div>
+  </div>
+</div>

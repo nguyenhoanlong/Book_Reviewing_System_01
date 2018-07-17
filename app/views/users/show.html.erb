@@ -16,14 +16,37 @@
     </div>
   <% end %>
   <hr>
-  <%= t "relationships.name" %> : <%= @user.name %>
+  <%= t "relationships.name" %>: <%= @user.name %>
   <hr>
   <%= t "relationships.email" %>: <%= @user.email %>
   <hr>
   <%= t "relationships.phone" %>: <%= @user.phone %>
   <hr>
+  <% if @user == current_user %>
+    <center><%= link_to "Change Info", edit_user_path , class: "btn btn-success"%><center>
+  <% end %>
   </div>
-  <div class="col-md-8"></div>
+  <div class="col-md-8">
+    <ul class="nav nav-tabs">
+      <li class="active" data-tab_id="<%= Settings.from_tab_follower %>"><a data-toggle="tab" href="#list_follower"><%= t "relationships.list_follow" %></a></li>
+      <li data-tab_id="<%= Settings.from_tab_following %>"><a data-toggle="tab" href="#list_following"><%= t "relationships.list_following" %></a></li>
+    </ul><br>
+    <div class="row">
+      <%= form_tag "search_users_path" do |f| %>
+        <%= text_field_tag "txt_search_user", nil, class: "form-control", style: "float: right;width: 25%;"%>
+      <% end %>
+    </div><br>
+    <div class="tab-content">
+      <div id="list_follower" class="tab-pane fade in active">
+        <%= render partial: "user", collection: @user_follower, as: "user" %>
+        <%= paginate @user_follower, theme: "twitter-bootstrap-3" %>
+      </div>
+      <div id="list_following" class="tab-pane fade">
+        <%= render partial: "user", collection: @user_following, as: "user" %>
+        <%= paginate @user_following, theme: "twitter-bootstrap-3" %>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="row">
   <div class="col-md-4">

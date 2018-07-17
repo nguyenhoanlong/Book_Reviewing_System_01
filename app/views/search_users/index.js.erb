@@ -1,0 +1,6 @@
+tab_id = $('li.active').data('tab_id')
+if (tab_id == <%= Settings.from_tab_follower.to_s %>) {
+  $("#list_follower").html(` <%= j render partial: "users/user", collection: @users, as: :user %> `)
+} else {
+  $("#list_following").html(` <%= j render partial: "users/user", collection: @users, as: :user %> `)
+}

@@ -10,6 +10,7 @@ en:
   delete: "Delete"
   edit: "Edit"
   confirm: "Are yout sure?"
+  not_found: "Record not found"
   layout:
     header:
       home: "Home"
@@ -46,6 +47,8 @@ en:
       activate: "Activate"
     show:
       show_info: "Detail information"
+      change_info: "Update profile"
+    update: "Update"
   sessions:
     login_fail: "Incorrect email or password"
     login_success: "Login is successfully"
@@ -106,3 +109,4 @@ en:
     name: "Full name"
     email: "Email"
     phone: "Phone"
+    list_following: "List Following"
