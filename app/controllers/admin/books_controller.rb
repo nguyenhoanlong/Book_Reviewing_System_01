@@ -1,10 +1,10 @@
-
 class Admin::BooksController < ApplicationController
+  before_action :verify_admin, only: %i(new add update edit destroy)
   before_action :load_book, only: %i(show update edit destroy)
 
   def index
     @books = Book.list_book
-      .page(params[:page]).per Settings.paginate_page
+                 .page(params[:page]).per Settings.paginate_page
   end
 
   def new
@@ -36,8 +36,11 @@ class Admin::BooksController < ApplicationController
   def edit; end
 
   def destroy
-    @book.destroy
-    flash[:success] = t "books.delete_success"
+    if @book.destroy
+      flash[:success] = t "books.delete_success"
+    else
+      flash[:danger] = t "delete_faild"
+    end
     redirect_to admin_books_url
   end
 
