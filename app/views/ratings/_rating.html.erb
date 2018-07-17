@@ -1,0 +1,24 @@
+<div class="review-<%= rating.id %>">
+  <div class="title-rating row">
+    <div class="col-md-7">
+      <%= rating.title %>
+    </div>
+    <div class="col-md-4">
+      <div class="area-view-rate">
+       <%= render "ratings/star", poin: rating.poin %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <%= rating.content %>
+      <center>
+        <%= link_to (t "edit"), edit_book_rating_path(rating.book, rating), class: "btn btn-success btn-sm" %>
+        <%= link_to (t "delete"), book_rating_path(rating.book, rating), method: :delete, 
+          data: {confirm: (t "confirm")}, class: "btn btn-danger btn-sm delete-review",
+          remote: true, "data-review": rating.id %>
+      </center>
+    </div>
+  </div>
+  <br>
+</div>

@@ -1,0 +1,3 @@
+$(".delete-review").bind("ajax:success", function() {
+   $(document).find(".review-"+$(this).data("review")).fadeOut()
+});
