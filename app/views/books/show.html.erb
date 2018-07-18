@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-4">
+    <%= image_tag @book.image.thumb.url %>
+    <%= link_to (t "review.add_review"), new_book_rating_path(@book), class: "btn btn-success" %>
+  </div>
+  <div class="col-md-8">
+    <h2 class="title-book-name"><%= @book.name %></h2>
+    <h4><%= @book.author %></h4>
+    <p><%= @book.description %></p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <%= render @ratings %>
+  </div>
+</div>

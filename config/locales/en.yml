@@ -5,6 +5,9 @@ en:
   permission: "You don't have permission"
   update: "Update"
   please_login: "Please Login"
+  delete: "Delete"
+  edit: "Edit"
+  confirm: "Are yout sure?"
   layout:
     header:
       home: "Home"
@@ -71,3 +74,10 @@ en:
     created_at: "Created at"
     user_request: "User request"
     create: "Create new request"
+  review:
+    create_success: "Add new review is successfully"
+    create_fail: "Add new review is fail"
+    update_success: "Update review is successfully"
+    update_fail: "Update review is fail"
+  rating:
+    not_found_rating: "Not found rating"

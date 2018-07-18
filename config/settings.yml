@@ -3,3 +3,4 @@ width_thumb_book: 300
 height_thumb_book: 400
 paginate_page: 10
 validate_size_image: 4
+minimum_content_review: 50
