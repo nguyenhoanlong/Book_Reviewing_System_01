@@ -32,7 +32,7 @@ class RatingsController < ApplicationController
   end
 
   private
-  
+
   def load_rating
     @rating = Rating.find_by id: params[:id]
     render html: (t "rating.not_found_rating") if @rating.nil?

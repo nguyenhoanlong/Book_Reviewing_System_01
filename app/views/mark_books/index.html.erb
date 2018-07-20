@@ -1,0 +1,7 @@
+<center> 
+  <h3><%= t "mark.list_mark " + params[:type] %></h3>
+  <hr>
+</center>
+<div class="row">
+  <%= render partial: "mark_books/show_book", collection: @user_books, as: :"user_book" %>
+</div>
