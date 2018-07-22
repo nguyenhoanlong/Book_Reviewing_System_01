@@ -1,6 +1,7 @@
 class UserBooksController < ApplicationController
   before_action :load_user_book, only: %i(create update)
-  
+  before_action :load_book, only: %i(create update)
+
   def new; end
 
   def create
@@ -8,6 +9,7 @@ class UserBooksController < ApplicationController
     @user_book.book_id = params[:book_id]
     if @user_book.save
       flash[:success] = t ".update_success"
+      make_history @book, Settings.user_mark_book
     else
       flash[:danger] = t ".update_fail"
     end
@@ -15,6 +17,7 @@ class UserBooksController < ApplicationController
 
   def update
     if @user_book.update_attributes user_book_params
+      make_history @book, Settings.user_mark_book
       flash[:success] = t ".update_success"
     else
       flash[:danger] = t ".update_fail"
@@ -22,6 +25,11 @@ class UserBooksController < ApplicationController
   end
 
   private
+
+  def load_book
+    @book = Book.find_by id: params[:book_id]
+    render html: (t "not_found") if @book.nil?
+  end
 
   def load_user_book
     @user_book = UserBook.by_book(params[:book_id], current_user.id).first

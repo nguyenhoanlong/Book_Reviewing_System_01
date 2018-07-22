@@ -11,4 +11,19 @@ module ApplicationHelper
       page_title + " | " + base_title
     end
   end
+
+  def content_activity activity
+    object_id = activity.historyable_id
+    case activity.type_history
+      when Settings.mark
+        book = Book.find_by id: object_id
+        "<p><b>#{link_to activity.user.name, activity.user}</b> #{t "home.mark"} <b>#{link_to book.name, book}</b></p>"
+      when Settings.follow
+        user = User.find_by id: object_id
+        "<p><b>#{link_to activity.user.name, activity.user}</b> #{t "home.follow"} <b>#{link_to user.name, user}</b></p>"
+      when Settings.review
+        book = Book.find_by id: object_id
+        "<p><b>#{link_to activity.user.name, activity.user}</b> #{t "home.review"} <b>#{link_to book.name, book}</b></p>"
+    end
+  end
 end

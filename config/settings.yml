@@ -6,3 +6,10 @@ validate_size_image: 4
 minimum_content_review: 50
 from_tab_follower: 1
 from_tab_following: 0 
+user_mark_book: 1
+user_follow_other_user: 2
+rating_book: 3
+limit_record: 10
+mark: "mark"
+follow: "follow"
+review: "review"
