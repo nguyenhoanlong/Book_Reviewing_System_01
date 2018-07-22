@@ -32,7 +32,7 @@ en:
     title_book_demo: "Tam Quốc Diễn Nghĩa"
     top_rate: "Top Rate"
     top_review: "Top Review"
-    top_read: "Top Read"
+    new_book: "New Book"
     review: ", reviewed book "
     follow: ", followed user "
     mark: ", mark book "
@@ -76,6 +76,7 @@ en:
     create: "Create new book"
     more_than: "File images more than 4MB"
   requests:
+    create_success: "Create request successfully"
     form_request: "Form request book"
     request_at: "Request at"
     status: "Status"
@@ -113,3 +114,10 @@ en:
     email: "Email"
     phone: "Phone"
     list_following: "List Following"
+  like:
+    create_success: "Like successfully"
+    create_faild: "Like fail"
+    destroy_success: "Unlike successfully"
+    destroy_fail: "Unlike fail"
+    like: "Like"
+    unlike: "Unlike"    

@@ -13,3 +13,9 @@ limit_record: 10
 mark: "mark"
 follow: "follow"
 review: "review"
+user_mark_book: 1
+user_follow_other_user: 2
+rating_book: 3
+limit_history: 20
+progress: "progress"
+paginate_home_page: 5

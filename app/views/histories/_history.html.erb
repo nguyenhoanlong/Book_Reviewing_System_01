@@ -1,5 +1,13 @@
 <div class="area-new-feed">
-  <%= content_activity(history).html_safe %>
-  <%= time_ago_in_words(history.created_at) %>
+  <div class="content_new_feed">
+    <%= content_activity(history).html_safe %>
+  </div>
+  <div class="time_new_feed">
+    <%= time_ago_in_words(history.created_at) %>
+  </div>
+  <div class="like_activity" id="like_activity-<%= history.id %>">
+    <%= "#{history.likes.count} #{(t "like.like")}" %>
+    <%= render "likes/form_like", history: history%>
+  </div>
   <hr>
 </div>

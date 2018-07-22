@@ -26,4 +26,8 @@ module ApplicationHelper
         "<p><b>#{link_to activity.user.name, activity.user}</b> #{t "home.review"} <b>#{link_to book.name, book}</b></p>"
     end
   end
+
+  def verify_like history
+    current_user.likes.find_by history_id: history.id
+  end
 end

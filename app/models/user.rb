@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :user_books
   has_many :requests
   has_many :likes
+  has_many :histories, class_name: "Relationship", foreign_key: "user_id"
   has_many :histories, as: :historyable
   has_many :comments
   has_many :active_relationships, class_name: "Relationship",
@@ -26,7 +27,7 @@ class User < ApplicationRecord
   validates :email, presence: true, format: {with: VALID_EMAIL_REGEX},
     uniqueness: {case_sensitive: false}
   validates :phone, length: {maximum: Settings.maximum_phone}
-  
+
   def send_activation_email
     UserMailer.account_activation(self).deliver_now
   end

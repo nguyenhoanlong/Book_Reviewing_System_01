@@ -4,27 +4,28 @@
       <%= link_to (t "layout.header.home"), root_path, class: "navbar-brand" %>
     </div>
     <ul class="nav navbar-nav">
-      <li><%= link_to (t "layout.header.list_book"), admin_books_path %></li>
-      <% if is_admin? %>
-        <li> <%= link_to (t "layout.header.list_cat"), "#" %> </li>
-        <li> <%= link_to (t "layout.header.list_user"), "#" %> </li>
+      <% if logged_in? %>
         <li> <%= link_to (t "layout.header.list_request"), my_requests_path %> </li>
+      <% end %>
+      <% if is_admin? %>
+        <li><%= link_to (t "layout.header.list_book"), admin_books_path %></li>
+        <li> <%= link_to (t "layout.header.list_cat"), "#" %> </li>
         <li> <%= link_to (t "layout.header.handler_request"), admin_requests_path %> </li>
       <% end %>
-      <li>
-        <form action="/search_books" class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="text" id="txt_search" name="txt_search" class="txt_search form-control" placeholder="<%= t "layout.header.placeholder_search" %>">
-          </div>
-          <button type="submit" class="btn btn-default"><%= t "layout.header.search" %></button>
-        </form>
-        <div class="result_search">
-          <ul class="ul-result_search">
-          </ul>
-        </div>
-      </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
+    <li>
+      <form action="/search_books" class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" id="txt_search" name="txt_search" class="txt_search form-control" placeholder="<%= t "layout.header.placeholder_search" %>">
+        </div>
+        <button type="submit" class="btn btn-default"><%= t "layout.header.search" %></button>
+      </form>
+      <div class="result_search">
+        <ul class="ul-result_search">
+        </ul>
+      </div>
+    </li>
       <% if !logged_in? %>
         <li> <%= link_to (t "layout.header.login"), login_path %> </li>
         <li> <%= link_to (t "layout.header.register"), new_user_path %> </li>

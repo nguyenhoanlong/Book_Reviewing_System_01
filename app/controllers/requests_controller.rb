@@ -8,8 +8,8 @@ class RequestsController < ApplicationController
   def create
     @request = current_user.requests.build requests_params
     if @request.save
-      flash[:infor] = t "users.create.check_email"
-      redirect_to root_url
+      flash[:success] = t "requests.create_success"
+      redirect_to my_requests_url
     else
       render :new
     end
