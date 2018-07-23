@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :mark_books, only: %i(index)
   resources :users
   resources :requests
+  resources :search_books, only: %(index)
   resources :my_requests, only: %i(index)
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"

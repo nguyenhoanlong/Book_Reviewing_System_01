@@ -1,0 +1,7 @@
+<center> 
+  <h3><%= (t "mark.search_result ") + params[:txt_search] %></h3>
+  <hr>
+</center>
+<div class="row">
+  <%= render partial: "show_book", collection: @books, as: :"book" %>
+</div>
