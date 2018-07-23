@@ -13,6 +13,8 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :follower
   has_secure_password
 
+  mount_uploader :avatar, ImageUploader
+
   attr_accessor :activation_token
 
   before_create :create_activation_digest
@@ -46,6 +48,18 @@ class User < ApplicationRecord
         BCrypt::Engine.cost
       BCrypt::Password.create(string, cost: cost)
     end
+  end
+
+  def follow other_user
+    following << other_user
+  end
+
+  def unfollow other_user
+    following.delete other_user
+  end
+
+  def following? other_user
+    following.include? other_user
   end
 
   private
