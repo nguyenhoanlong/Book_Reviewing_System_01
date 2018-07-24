@@ -4,3 +4,5 @@ height_thumb_book: 400
 paginate_page: 10
 validate_size_image: 4
 minimum_content_review: 50
+from_tab_follower: 1
+from_tab_following: 0 

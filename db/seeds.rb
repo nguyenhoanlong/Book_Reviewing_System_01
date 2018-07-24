@@ -12,6 +12,7 @@ User.create!(
   email = "example-#{n+1}@gmail.com"
   password = "123456"
   User.create!(
+    name: name,
     email: email,
     password: password,
     password_confirmation: password,

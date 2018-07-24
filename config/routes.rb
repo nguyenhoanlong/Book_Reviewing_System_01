@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :requests
   resources :search_books, only: %i(index)
   resources :my_requests, only: %i(index)
+  resources :search_users, only: %i(index)
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"

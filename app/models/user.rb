@@ -12,6 +12,9 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
   has_secure_password
+  scope :like_by_name_email, -> (keyword){where("name like ? or email like ?",
+    "%#{keyword}%", "%#{keyword}%")}
+  scope :ordered, -> {order(name: :desc)}
 
   mount_uploader :avatar, ImageUploader
 
