@@ -3,6 +3,7 @@ class RelationshipsController < ApplicationController
     @user = User.find_by id: params[:followed_id]
     if current_user.follow @user
       flash[:success] = t "relationships.follow_sucess"
+      make_history @user, Settings.user_follow_other_user
     else
       flash[:danger] = t "relationships.follow_fail"
     end

@@ -3,6 +3,7 @@ class Book < ApplicationRecord
   has_many :user_books
   has_many :requests
   has_many :ratings
+  has_many :histories, as: :historyable
   mount_uploader :image, ImageUploader
 
   validates :name, presence: true, uniqueness: {case_sensitive: false}

@@ -33,6 +33,9 @@ en:
     top_rate: "Top Rate"
     top_review: "Top Review"
     top_read: "Top Read"
+    review: ", reviewed book "
+    follow: ", followed user "
+    mark: ", mark book "
   users:
     new:
       create: "Create"

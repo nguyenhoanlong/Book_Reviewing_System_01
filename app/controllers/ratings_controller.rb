@@ -11,6 +11,7 @@ class RatingsController < ApplicationController
     @rating = current_user.ratings.build rating_params
     @rating.book_id = params[:book_id]
     if @rating.save
+      make_history @book, Settings.rating_book
       flash[:success] = t "review.create_success"
       redirect_to @book
     else

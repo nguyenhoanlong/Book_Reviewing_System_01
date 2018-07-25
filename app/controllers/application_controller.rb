@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
     flash[:danger] = t "please_login"
     redirect_to login_url
   end
+
+  def make_history object, type
+    object.histories.create user_id: current_user.id, type_history: type
+  end
 end

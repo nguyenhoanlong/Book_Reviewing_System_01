@@ -1,0 +1,5 @@
+<div class="area-new-feed">
+  <%= content_activity(history).html_safe %>
+  <%= time_ago_in_words(history.created_at) %>
+  <hr>
+</div>

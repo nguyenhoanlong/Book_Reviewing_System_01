@@ -36,6 +36,10 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+
+    @user = User.find_by id: params[:id]
+    @user_follower = @user.followers
+    @user_following = @user.following
   end
 
   private
