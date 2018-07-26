@@ -121,3 +121,9 @@ en:
     destroy_fail: "Unlike fail"
     like: "Like"
     unlike: "Unlike"    
+  email:
+    handle_request_new_book: "Handle request new book"
+    request_handle: "Request handle"
+    hi: "Hi, "
+    request_handle_request_book: "You have some request new book. Please handle it. Thanks"
+    handle: "handle"

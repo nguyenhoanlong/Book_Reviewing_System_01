@@ -16,6 +16,7 @@ class User < ApplicationRecord
   scope :like_by_name_email, -> (keyword){where("name like ? or email like ?",
     "%#{keyword}%", "%#{keyword}%")}
   scope :ordered, -> {order(name: :desc)}
+  scope :admin, -> {where(admin: Settings.role_admin)}
 
   mount_uploader :avatar, ImageUploader
 

@@ -1,0 +1,7 @@
+<h1><%= t "email.request_handle" %></h1>
+
+<p><%= t "email.hi" + @user.name %>,</p>
+
+<p> <%= t "email.request_handle_request_book" %> </p>
+
+<%= link_to (t "email.handle"), admin_requests_url %>

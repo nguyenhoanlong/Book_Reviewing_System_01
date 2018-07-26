@@ -19,3 +19,7 @@ rating_book: 3
 limit_history: 20
 progress: "progress"
 paginate_home_page: 5
+role_admin: 1
+pending: "pending"
+approved: "approved"
+rejected: "rejected"
