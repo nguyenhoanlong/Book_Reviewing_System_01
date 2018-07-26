@@ -7,6 +7,7 @@ footer {
   padding-top: 5px;
   border-top: 1px solid $gray-medium-light;
   color: $gray-light;
+  position: relative;
   a {
     color: $gray;
     &:hover {
@@ -88,4 +89,18 @@ footer {
   .img-avatar {
     border: 3px solid silver;
   }
+}
+.time_new_feed {
+  position: relative;
+  top: -13px;
+  color: silver;
+}
+
+.class_follow {
+  position: relative;
+  left: 130px;
+}
+
+.area-user{
+  padding-bottom: 20px;
 }
