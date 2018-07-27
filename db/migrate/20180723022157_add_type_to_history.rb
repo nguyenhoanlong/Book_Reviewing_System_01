@@ -3,3 +3,4 @@ class AddTypeToHistory < ActiveRecord::Migration[5.2]
     add_column :histories, :type_history, :integer
   end
 end
+
