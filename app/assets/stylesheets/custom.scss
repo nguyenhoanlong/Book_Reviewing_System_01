@@ -1,6 +1,7 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'color.scss';
+@import 'toastr';
 
 footer {
   margin-top: 45px;
@@ -103,4 +104,25 @@ footer {
 
 .area-user{
   padding-bottom: 20px;
+}
+
+.review-rating {
+  padding-bottom: 15px;
+
+  .area-btn-review {
+    padding-top: 10px;
+  }
+}
+
+.float_right {
+  float: right;
+}
+
+.action-comment {
+  right: -10px;
+}
+
+.image-user-comment {
+  border-radius: 50%;
+  width: 110%;
 }

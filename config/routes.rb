@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   resources :account_activations, only: [:edit]
   resources :books, only: %i(show) do 
-    resources :ratings
+    resources :ratings do
+      resources :comments
+    end
     resources :user_books
   end
   resources :mark_books, only: %i(index)

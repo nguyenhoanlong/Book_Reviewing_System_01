@@ -1,0 +1,10 @@
+<%= form_for [@book, @rating, @comment], remote: true do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <div class="form-group">
+    <%= f.label :content %>
+    <%= f.text_area :content, class: "form-control", rows: 3 %>
+  </div>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary float_right" %> </br>
+<% end %>

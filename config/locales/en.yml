@@ -8,6 +8,7 @@ en:
   update: "Update"
   please_login: "Please Login"
   delete: "Delete"
+  create: "Create"
   edit: "Edit"
   confirm: "Are yout sure?"
   not_found: "Record not found"
@@ -94,6 +95,12 @@ en:
     update_fail: "Update review is fail"
   rating:
     not_found_rating: "Not found rating"
+    comment: "Comment"
+  comments:
+    create_success: "Add comment success"
+    create_falid: "Add comment fali"
+    comment_success: "Add comment successfully"
+    comment_fail: "Add comment fail"
   mark:
     mark: "Mark this book"
     list_favorite: "List book favorite"
