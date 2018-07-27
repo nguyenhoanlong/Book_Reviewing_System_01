@@ -22,7 +22,7 @@ class RequestsController < ApplicationController
   def update
     if @request.update_attributes requests_params
       flash[:success] = t "books.update_success"
-      redirect_to @request
+      redirect_to my_requests_url
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class RequestsController < ApplicationController
     else
       flash[:success] = t "delete_faild"
     end
-    redirect_to myrequest_url
+    redirect_to my_requests_url
   end
 
   private

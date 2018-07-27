@@ -4,11 +4,12 @@ class Admin::BooksController < ApplicationController
 
   def index
     books = Book.like_by_name_author(params[:keyword])
-    books = Book.filter_by_category(params[:cat_id]) unless params[:cat_id].blank?
+    books = books.filter_by_category(params[:cat_id]) unless params[:cat_id].blank?
     respond_to do |format|
       format.js
-      format.html
+      format.html {books = Book.ordered}
     end
+
     @books = books.ordered.page(params[:page])
       .per Settings.paginate_page
   end

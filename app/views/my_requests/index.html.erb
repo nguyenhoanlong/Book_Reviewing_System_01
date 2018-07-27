@@ -8,10 +8,10 @@
       <tr>
         <th scope="col" class="text-center">#</th>      
         <th scope="col" class="text-center"><%= t "requests.name_book" %></th>
-        <th scope="col" class="text-center"><%= t "requests.request_at" %></th>
         <th scope="col" class="text-center"><%= t "requests.status" %></th>
+        <th scope="col" class="text-center"><%= t "requests.request_at" %></th>
         <th scope="col" class="text-center">
-          <%= link_to "+", new_request_path, class: "btn btn-success" %>
+          <%= link_to "+", new_request_path, class: "btn btn-success", remote: true %>
         </th>
       </tr>
     </thead>

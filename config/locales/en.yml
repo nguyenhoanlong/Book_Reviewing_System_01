@@ -12,6 +12,7 @@ en:
   edit: "Edit"
   confirm: "Are yout sure?"
   not_found: "Record not found"
+  action: "Action"
   layout:
     header:
       home: "Home"
@@ -88,6 +89,10 @@ en:
     created_at: "Created at"
     user_request: "User request"
     create: "Create new request"
+    update: "Update"
+    handle: "Handle"
+    confirm: "Confirm"
+    show_all: "Show all"
   review:
     create_success: "Add new review is successfully"
     create_fail: "Add new review is fail"

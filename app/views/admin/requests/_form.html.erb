@@ -1,5 +1,5 @@
 <div class="modal fade" id="modalRequest" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">
@@ -10,16 +10,20 @@
         </h5>
       </div>
       <div class="modal-body">
-        <%= form_for @request, remote: true do |f| %>
+        <%= form_for [:admin, @request], remote: true do |f| %>
           <%= render "shared/error_messages", object: f.object %>
-        
+
           <%= f.label :name_book %>
-          <%= f.text_field :name_book, class: "form-control" %><br>
-        
+          <%= f.text_field :name_book, class: "form-control", readonly: true %><br>
+
           <%= f.label :content %>
-          <%= f.text_area :content, class: "form-control" %> <br>
-        
-          <%= f.submit yield(:button_text), class: "btn btn-primary form-control"  %>
+          <%= f.text_area :content, class: "form-control", readonly: true %> <br>
+
+          <%= f.select :status, options_for_select(@status,
+            selected: @status[@request.status]), {}, class: "form-control" %>
+          <br>
+
+          <%= f.submit (t "requests.confirm"), class: "btn btn-primary form-control" %>
         <% end %>
       </div>
     </div>
