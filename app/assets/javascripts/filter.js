@@ -11,4 +11,15 @@ $(document).on('turbolinks:load', function(){
       },
     })
   })
+
+  $('#status').change(function() {
+    var status = $('#status').val()
+    $.ajax({
+      url: '/admin/requests',
+      method: 'GET',
+      data: {
+        status: status
+      },
+    })
+  })
 })

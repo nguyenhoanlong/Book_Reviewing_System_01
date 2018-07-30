@@ -9,9 +9,7 @@
   </td>
   <td class="text-center"><%= request.created_at %></td>
   <td class="text-center">
-    <%= link_to (t "books.view"), request_path(request) %> |
-    <%= link_to (t "books.edit"), edit_admin_request_path(request) %> |
-    <%= link_to (t "books.delete"), request_path(request), method: :delete,
-      data: {confirm: (t "books.confirm")} %>
+    <%= link_to (t "requests.handle"), edit_admin_request_path(request), remote: true,
+      class: "btn btn-success btn-sm" %>
   </td>
 </tr>

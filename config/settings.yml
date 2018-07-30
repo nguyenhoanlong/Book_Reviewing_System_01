@@ -23,3 +23,6 @@ role_admin: 1
 pending: "pending"
 approved: "approved"
 rejected: "rejected"
+value_pending: 0
+value_approved: 1
+value_rejected: 2

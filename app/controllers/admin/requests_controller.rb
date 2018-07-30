@@ -3,7 +3,13 @@ class Admin::RequestsController < ApplicationController
   before_action :load_request, only: %i(edit update)
 
   def index
-    @requests = Request.ordered.includes(:user).page(params[:page])
+    requests = params[:status].blank? ? Request.ordered : Request.ordered.by_status(params[:status])
+    respond_to do |format|
+      format.js
+      format.html
+    end
+
+    @requests = requests.includes(:user).page(params[:page])
                        .per Settings.paginate_page
   end
 
@@ -14,7 +20,7 @@ class Admin::RequestsController < ApplicationController
   def update
     if @request.update_attributes requests_params
       flash[:success] = t "books.update_success"
-      redirect_to @request
+      redirect_to admin_requests_url
     else
       render :edit
     end

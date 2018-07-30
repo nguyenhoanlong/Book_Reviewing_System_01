@@ -5,6 +5,7 @@ class Request < ApplicationRecord
 
   scope :by_user, -> user_id {where user_id: user_id}
   scope :ordered, -> {order created_at: :desc}
+  scope :by_status, -> (status){where(status: status)}
 
   class << self
     def remove_request_accepted
