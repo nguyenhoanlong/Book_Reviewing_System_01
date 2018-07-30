@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :verify_logged, except: %i(:destroy)
+
   def new; end
 
   def create
@@ -22,5 +24,13 @@ class SessionsController < ApplicationController
     log_out
     redirect_to root_url
     flash[:success] = t "sessions.logout_success"
+  end
+
+  private
+
+  def verify_logged
+    return if !logged_in?
+    redirect_to root_url
+    flash[:danger] = t "please_logout"
   end
 end

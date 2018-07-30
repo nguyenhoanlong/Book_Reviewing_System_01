@@ -1,7 +1,7 @@
 set :environment, "development"
 
 every "59 23 28-30 * *"  do
-  rake "remove_request"
+  rake "delete_request_accepted"
 end
 
 every "0 15 26 * *" do

@@ -37,7 +37,6 @@
             <li> <%= link_to (t "mark.list_read"), mark_books_path(type: "read", id: current_user) %> </li>
             <li> <%= link_to (t "mark.list_reading"), mark_books_path(type: "reading", id: current_user) %> </li>
             <li> <%= link_to (t "mark.list_favorite"), mark_books_path(type: "favorite", id: current_user) %> </li>
-            <li><%= link_to (t "books.request_new_book"), new_request_path %></li>
             <li> <%= link_to (t "layout.header.change_infor"), current_user %> </li>
             <li role="separator" class="divider"></li>
             <li> <%= link_to (t "layout.header.logout"), logout_path, method: :delete %> </li>

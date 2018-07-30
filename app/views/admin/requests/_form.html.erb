@@ -19,10 +19,14 @@
           <%= f.label :content %>
           <%= f.text_area :content, class: "form-control", readonly: true %> <br>
 
-          <%= f.select :status, options_for_select(@status,
-            selected: @status[@request.status]), {}, class: "form-control" %>
-          <br>
+          <%= f.label :reason %>
+          <%= f.text_area :reason, class: "form-control" %> <br>
 
+          <div id="area-reason"></div>
+
+          <%= f.select :status, options_for_select(@status,
+            selected: @status[@request.status]), {}, class: "form-control", onchange: "handle_request_book(this)" %>
+          <br>
           <%= f.submit (t "requests.confirm"), class: "btn btn-primary form-control" %>
         <% end %>
       </div>
