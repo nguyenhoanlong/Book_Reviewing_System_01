@@ -1,0 +1,8 @@
+<% if @comment.present? %>
+  $('#comment-for-rating-<%= @rating.id %>').empty()
+  $('#area-comment-rating-<%= @rating.id %>')
+    .prepend(`<%= j render "comment", comment: @comment %>`)
+  toastr.success(I18n.t('comments.comment_success'))
+<% else %>
+  toastr.danger(I18n.t('comments.comment_fail'))
+<% end %>

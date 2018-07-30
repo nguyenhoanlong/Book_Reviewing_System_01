@@ -30,4 +30,8 @@ module ApplicationHelper
   def verify_like history
     current_user.likes.find_by history_id: history.id
   end
+
+  def verify_comment? comment
+    current_user == comment.user if logged_in?
+  end
 end

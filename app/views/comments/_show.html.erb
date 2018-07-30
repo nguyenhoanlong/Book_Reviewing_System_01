@@ -1,0 +1,17 @@
+<hr>
+<div class="col-md-1">
+  <%= link_to (image_tag comment.user.avatar.thumb.url, class: "image-user-comment",
+    title: comment.user.name).html_safe, comment.user %>
+</div>
+<div class="col-md-10" id="content-comment-<%= comment.id %>">
+  <p><%= comment.content %></p>
+</div>
+<% if verify_comment? comment %>
+  <div class="col-md-1 action-comment">
+    <%= link_to ("<span class='glyphicon glyphicon-edit'></span>").html_safe,
+      edit_book_rating_comment_path(@book, comment.rating, comment), remote: true %>
+    <%= link_to ("<span class='glyphicon glyphicon-remove'></span>").html_safe,
+      book_rating_comment_path(@book, comment.rating, comment), remote: true,
+      method: :delete, data: {confirm: (t "books.confirm")} %>
+  </div>
+<% end %>

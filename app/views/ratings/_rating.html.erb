@@ -1,26 +1,41 @@
-<div class="review-<%= rating.id %>">
-  <div class="title-rating row">
-    <div class="col-md-9">
-      <%= rating.title %>
-    </div>
-    <div class="col-md-3">
-      <div class="area-view-rate">
-       <%= render "ratings/star", poin: rating.poin %>
+<hr>
+<div class="row">
+  <div class="col-md-1">
+    <%= link_to (image_tag rating.user.avatar.thumb.url, class: "image-user-comment",
+      title: rating.user.name).html_safe, rating.user %>
+  </div>
+  <div class="col-md-11">
+    <div class="review-<%= rating.id %> review-rating">
+    <div class="title-rating row">
+      <div class="col-md-5">
+        <%= rating.title %>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <%= rating.content %>
-      <% if current_user.present? && current_user.id == rating.user_id %>
-        <center>
-          <%= link_to (t "edit"), edit_book_rating_path(rating.book, rating), class: "btn btn-success btn-sm" %>
-          <%= link_to (t "delete"), book_rating_path(rating.book, rating), method: :delete, 
-            data: {confirm: (t "confirm")}, class: "btn btn-danger btn-sm delete-review",
-            remote: true, "data-review": rating.id %>
-        </center>
-      <% end %>
+    <div class="row">
+    <div class="col-md-2">
+      <div class="area-view-rate">
+        <%= render "ratings/star", poin: rating.poin %>
+      </div>
     </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <%= rating.content %>
+        <% if current_user.present? && current_user.id == rating.user_id %>
+          <center class="area-btn-review">
+            <%= link_to (t "rating.comment"), new_book_rating_comment_path(rating.book, rating), class: "btn btn-danger btn-sm add_comment",
+              remote: true, "data-review_id": rating.id %>
+            <%= link_to (t "edit"), edit_book_rating_path(rating.book, rating), class: "btn btn-success btn-sm" %>
+          </center>
+        <% end %>
+        <div id="comment-for-rating-<%= rating.id %>">
+        </div>
+        <div class="col-md-12" id="area-comment-rating-<%= rating.id %>">
+          <%= render rating.comments.ordered %>
+        </div>
+      </div>
+    </div>
+    <br>
   </div>
-  <br>
+  </div>
 </div>

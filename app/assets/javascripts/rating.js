@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).on('turbolinks:load', function(){
   if ($(".area-rate").length > 0) {
     $(".fa-star").click(function() {
       poin = $(this).data("poin")

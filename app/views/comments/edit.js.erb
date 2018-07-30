@@ -1,0 +1,3 @@
+<% provide :button_text, (t "edit")%>
+$('#content-comment-<%= @comment.id %>')
+  .html(`<%= j render "form" %>`)

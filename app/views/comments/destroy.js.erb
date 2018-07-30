@@ -1,0 +1,6 @@
+<% if @comment.present? %>
+  $('#content-comment-<%= @comment.id %>').parent().fadeOut()
+  toastr.success(I18n.t('delete_success'))
+<% else %>
+  toastr.danger(I18n.t('delete_faild'))
+<% end %>
