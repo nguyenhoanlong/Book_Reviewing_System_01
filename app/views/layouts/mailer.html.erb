@@ -8,6 +8,8 @@
   </head>
 
   <body>
+    <h1><%= t "layout.header.title" %></h1>
+    <p><%= t "mailer.user_mailer.hi" + (yield :name) %>,</p>
     <%= yield %>
   </body>
 </html>

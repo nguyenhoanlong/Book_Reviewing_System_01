@@ -1,4 +1,4 @@
-<%= t "mailer.user_mailer.hi" + @user.name %>,
+<% provide :name, @user.name %>
 
 <%= t "mailer.user_mailer.welcome" %>
 

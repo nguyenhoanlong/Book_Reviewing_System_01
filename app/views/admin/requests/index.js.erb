@@ -1,2 +1,7 @@
-$("#table-request")
-  .html(`<%= j render partial:"admin/requests/request", collection: @requests, as: :request %>`)
+<% if @requests.blank? %>
+  $("#table-request").html("<tr class='text-center'><td colspan='6' style='color:silver'>"+I18n.t('no_record')+"</td></tr>")
+<% else %>
+  $("#table-request")
+    .html(`<%= j render partial:"admin/requests/request", collection: @requests, as: :request %>`)
+<% end %>
+

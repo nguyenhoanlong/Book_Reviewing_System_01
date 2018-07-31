@@ -13,6 +13,15 @@ en:
   confirm: "Are yout sure?"
   not_found: "Record not found"
   action: "Action"
+  have_book: "Have Book"
+  not_suitable: "Not suitable"
+  other: "Other"
+  content_have_book: "We have a book. Maybe, it is your request."
+  content_not_suitable: "Sorry, This book is not suitable."
+  accept_request: "Your request accpeted."
+  please_logout: "Please logout"
+  no_record: "No record"
+  click: "Click"
   layout:
     header:
       home: "Home"
@@ -139,3 +148,4 @@ en:
     hi: "Hi, "
     request_handle_request_book: "You have some request new book. Please handle it. Thanks"
     handle: "handle"
+    subject_request_new_book: "Messages about request a new book"

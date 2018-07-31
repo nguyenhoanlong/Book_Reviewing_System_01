@@ -7,6 +7,10 @@ class Request < ApplicationRecord
   scope :ordered, -> {order created_at: :desc}
   scope :by_status, -> (status){where(status: status)}
 
+  def send_email_to_user_request
+    UserMailer.mail_to_user_request(self).deliver unless self.status == Settings.pending
+  end
+
   class << self
     def remove_request_accepted
       request_accepted = self.approved

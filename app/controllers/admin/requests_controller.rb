@@ -21,6 +21,7 @@ class Admin::RequestsController < ApplicationController
     if @request.update_attributes requests_params
       flash[:success] = t "books.update_success"
       redirect_to admin_requests_url
+      @request.send_email_to_user_request
     else
       render :edit
     end
@@ -30,7 +31,7 @@ class Admin::RequestsController < ApplicationController
 
   def requests_params
     params[:request][:status] = params[:request][:status].to_i
-    params.require(:request).permit :name_book, :content, :status
+    params.require(:request).permit :name_book, :content, :status, :reason
   end
 
   def load_request
