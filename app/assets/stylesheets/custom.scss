@@ -56,7 +56,7 @@ footer {
 }
 
 .image-book {
-  width: 220px;
+  width: 100%;
 }
 
 #txt_search {
@@ -125,4 +125,26 @@ footer {
 .image-user-comment {
   border-radius: 50%;
   width: 110%;
+}
+
+.border_book{
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+.title-new-book{
+  background: #ded77e;
+  padding: 14px;
+  color: white;
+}
+
+.image-book:hover{
+  filter: brightness(70%);
+}
+
+.review_book{
+  background: #3ac5e4;
+  color: white;
+  padding: 14px;
 }
