@@ -19,9 +19,9 @@ class Admin::RequestsController < ApplicationController
 
   def update
     if @request.update_attributes requests_params
+      SendEmailUserRequestWorker.perform_async @request.id
       flash[:success] = t "books.update_success"
       redirect_to admin_requests_url
-      @request.send_email_to_user_request
     else
       render :edit
     end
