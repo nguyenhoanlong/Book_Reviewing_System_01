@@ -2,6 +2,11 @@
 <center>
   <h1><%= t "layout.header.edit" %></h1>
 </center>
-<div class="col-md-8 col-md-offset-2">
-  <%= render "form" %>
+<div class="col-md-10 col-md-offset-1">
+  <div class="col-md-3">
+    <%= image_tag @book.image.thumb.url, class: "img-book-modal" %>
+  </div>
+  <div class="col-md-9">
+    <%= render "form" %>
+  </div>
 </div>

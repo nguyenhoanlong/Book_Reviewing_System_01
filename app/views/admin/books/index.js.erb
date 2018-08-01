@@ -1,2 +1,6 @@
-$(".table-book")
-  .html(`<%= j render partial:"book", collection: @books, as: :book %>`)
+<% if @books.blank? %>
+  $(".table-book").html("<tr class='text-center'><td colspan='6' style='color:silver'>"+I18n.t('no_record')+"</td></tr>")
+<% else %>
+  $(".table-book")
+    .html(`<%= j render partial:"book", collection: @books, as: :book %>`)
+<% end %>
