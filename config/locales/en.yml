@@ -24,6 +24,7 @@ en:
   please_logout: "Please logout"
   no_record: "No record"
   click: "Click"
+  detail_book: "Detail book"
   layout:
     header:
       home: "Home"

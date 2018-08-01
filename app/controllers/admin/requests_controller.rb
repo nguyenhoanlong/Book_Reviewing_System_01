@@ -1,4 +1,5 @@
 class Admin::RequestsController < ApplicationController
+  layout "admin/application"
   before_action :verify_admin
   before_action :load_request, only: %i(edit update)
 

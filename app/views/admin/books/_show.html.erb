@@ -1,0 +1,26 @@
+<div class="modal fade" id="modalRequest" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          <%= t "detail_book" %>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </h5>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-3">
+            <%= image_tag @book.image.thumb.url, class: "img-book-modal" %>
+          </div>
+          <div class="col-md-8">
+            <h2><%= @book.author %></h2>
+            <h3><%= @book.name %></h3>
+            <p><%= @book.description %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
