@@ -124,7 +124,8 @@ footer {
 
 .image-user-comment {
   border-radius: 50%;
-  width: 110%;
+  width: 60px;
+  height: 60px;
 }
 
 .border_book{
@@ -139,7 +140,7 @@ footer {
   color: white;
 }
 
-.image-book:hover{
+.image-book:hover, .image-cat-book:hover {
   filter: brightness(70%);
 }
 
@@ -158,6 +159,14 @@ footer {
   background:transparent;
 }
 
-.style-like {
+bookstyle-like {
   font-size: 20px;
+}
+
+.image-cat-book {
+  width: 75%;
+}
+
+.book{
+  padding: 10px;
 }

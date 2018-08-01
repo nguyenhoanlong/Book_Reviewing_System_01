@@ -1,7 +1,6 @@
 <div class="row">
   <div class="col-md-4">
     <%= image_tag @book.image.thumb.url %>
-    <%= link_to (t "review.add_review"), new_book_rating_path(@book), class: "btn btn-success add-new-rating btn-mark-book" %>
     <br> <br>
     <div class="area-mark">
       <% if logged_in? %>

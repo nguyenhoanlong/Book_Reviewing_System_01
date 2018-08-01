@@ -6,6 +6,8 @@
     <center>
     <% if !@user.avatar.thumb.url.nil? %>
       <%= image_tag @user.avatar.thumb.url, class: "img-avatar", style: "width: 150px" %><br>
+    <% else %>
+      <%= image_tag "avatar-default.png", class: "img-avatar", style: "width: 150px" %>
     <% end %>
       <%= t "relationships.follow" %>: <span id="followers"><%= @user.followers.count %></span>
       <%= t "relationships.following" %>: <span id="following"><%= @user.following.count %></span>

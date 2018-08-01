@@ -1,0 +1,26 @@
+<div class="modal fade" id="modalRequest" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          <%= t "category.form_cat" %>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </h5>
+      </div>
+      <div class="modal-body">
+        <%= form_for [:admin, @category], remote: true do |f| %>
+          <%= render "shared/error_messages", object: f.object %>
+          <%= f.label :title %>
+          <%= f.text_field :title, class: "form-control" %><br>
+          <%= f.label :description %>
+          <%= f.text_area :description, class: "form-control", rows: 7 %> <br>
+          <center>
+            <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+          </center>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

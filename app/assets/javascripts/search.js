@@ -6,7 +6,7 @@ $(document).on('turbolinks:load', function(){
       $.ajax({
         url: '/search_books',
         method: 'GET',
-        data: {search: search},
+        data: {search: $.trim(search)},
       })
     } else {
       $('.ul-result_search').css('display', 'none')

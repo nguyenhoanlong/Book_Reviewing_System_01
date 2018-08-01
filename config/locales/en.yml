@@ -1,6 +1,8 @@
 en:
   type_something: "Type sonething"
+  create_success: "Create successfully"
   update_success: "Update successfully"
+  create_fail: "Create fail"
   update_fail: "Update fail"
   delete_success: "Delete successfully"
   delete_faild: "Delete fail"
@@ -151,3 +153,12 @@ en:
     subject_request_new_book: "Messages about request a new book"
     subject_new_comment: "You have new comment"
     commeted: "Orther user commented review: "
+  category:
+    list_cat: "Category"
+    admin_cat: "Admin categories"
+    title: "Title"
+    description: "Description"
+    add: "Add new"
+    create: "Create category"
+    update: "Update category" 
+    form_cat: "Form category"
