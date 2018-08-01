@@ -26,3 +26,5 @@ rejected: "rejected"
 value_pending: 0
 value_approved: 1
 value_rejected: 2
+limit_history: 20
+paginate_page_book_cat: 9

@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :verify_logged, except: %i(:destroy)
+  before_action :verify_logged, except: %i(destroy)
 
   def new; end
 

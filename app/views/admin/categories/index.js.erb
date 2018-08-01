@@ -1,0 +1,6 @@
+<% if @categories.blank? %>
+  $("#table-request").html("<tr class='text-center'><td colspan='6' style='color:silver'>"+I18n.t('no_record')+"</td></tr>")
+<% else %>
+  $(".table-categories")
+    .html(`<%= j render partial:"category", collection: @categories, as: :category %>`)
+<% end %>

@@ -32,7 +32,7 @@ class RequestsController < ApplicationController
     if @request.destroy
       flash[:success] = t "books.delete_success"
     else
-      flash[:success] = t "delete_faild"
+      flash[:danger] = t "delete_faild"
     end
     redirect_to my_requests_url
   end
