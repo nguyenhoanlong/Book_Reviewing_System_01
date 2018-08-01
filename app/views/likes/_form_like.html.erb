@@ -1,12 +1,18 @@
 <% if verify_like(history).nil? %>
-  <%= form_for current_user.likes.build do |f| %>
+  <%= form_for current_user.likes.build, remote: true do |f| %>
     <%= hidden_field_tag :history_id, history.id  %>
-    <%= f.submit (t "like.like"), class: "btn btn-success", "data-like_activity": history.id  %>
+    <div style="position:relative">
+      <%= f.submit "", class: "btn input-like", "data-like_activity": history.id  %>
+      <span class="glyphicon glyphicon-thumbs-up style-like"></span>
+    </div>
   <% end %>
 <% else %>
   <%= form_for current_user.likes.find_by(history_id: history.id),
-    method: :delete do |f| %>
-    <%= hidden_field_tag :history_id, history.id  %>
-    <%= f.submit (t "like.unlike"), class: "btn btn-danger", "data-like_activity": history.id %>
+    remote: true, method: :delete do |f| %>
+      <%= hidden_field_tag :history_id, history.id  %>
+      <div style="position:relative">
+        <%= f.submit "", class: "btn input-like", "data-like_activity": history.id %>
+        <span class="glyphicon glyphicon-thumbs-up style-like" style="color: #337ab7;"></span>
+      </div>
   <% end %>
 <% end %>

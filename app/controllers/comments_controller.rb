@@ -13,10 +13,11 @@ class CommentsController < ApplicationController
     end
   end
 
-  def create    
+  def create
     @comment = current_user.comments.build comment_params
     @comment.rating_id = params[:rating_id]
     if @comment.save
+      SendEmailToUserCommentWorker.perform_async @rating.id, current_user.id
       flash[:success] = t "comments.create_success"
     else
       flash[:danger] = t "comments.create_falid"
