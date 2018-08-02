@@ -1,0 +1,11 @@
+<tr>
+  <td class="col-md-1"><%= index_record @categories.index(category), Settings.paginate_page, params[:page].to_i %></td>
+  <td class="col-md-2"><%= category.title %></td>
+  <td class="col-md-7"> <%= truncate(category.description, length: 100) %> </td>
+  <td class="text-center col-md-3">
+    <%= link_to (t "update"), edit_admin_category_path(category), class: "btn btn-primary btn-sm", remote: true %>
+    <%= link_to (t "delete"), admin_category_path(category),
+      class: "btn btn-danger btn-sm", method: :delete,
+      data: {confirm: (t "books.confirm")} %>
+  </td>
+</tr>

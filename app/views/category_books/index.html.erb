@@ -1,0 +1,17 @@
+<div class="col-md-3">
+  <ul>
+    <%= render partial: "category_books/cat", collection: @categories, as: :category %>
+    <li> <%= link_to "See All", category_books_path %> </li>
+  <ul>
+</div>
+<div class="col-md-9">
+  <% unless @category.nil? %>
+    <center>
+      <h3><%= t "book_for " + @category.title %></h3>
+    </center>
+  <% end %>
+  <%= render partial: "category_books/book", collection: @books, as: :book %>
+  <div class="row">
+    <%= paginate @books, theme: "twitter-bootstrap-3" %>
+  </div>
+</div>
