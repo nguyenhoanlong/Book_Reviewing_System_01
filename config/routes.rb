@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     resources :books
     resources :requests, only: %i(edit update index)
     resources :categories
+    get "/login", to: "sessions#new"
+    post "/login", to: "sessions#create"
+    delete "/logout", to: "sessions#destroy"
   end
 
   resources :account_activations, only: [:edit]

@@ -6,7 +6,7 @@ $(document).on('turbolinks:load', function(){
       url: '/admin/books',
       method: 'GET',
       data: {
-        keyword: keyword,
+        keyword: $.trim(keyword),
         cat_id: cat_id
       },
     })

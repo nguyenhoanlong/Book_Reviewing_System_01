@@ -1,4 +1,5 @@
 class Admin::CategoriesController < ApplicationController
+  layout "admin/application"
   before_action :verify_admin
   before_action :load_category, except: %i(index new create)
 

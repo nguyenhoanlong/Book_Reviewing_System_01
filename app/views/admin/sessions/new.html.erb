@@ -1,0 +1,17 @@
+<center>
+  <h1><%= t "layout.header.login" %></h1>
+</center>
+<div class="col-md-6 col-md-offset-3">
+  <%= form_for(:session, url: admin_login_path) do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email, class: "form-control" %> 
+    <br>
+
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form-control" %> 
+    <br>
+
+    <%= f.submit (t "users.new.create"), class: "btn btn-primary" %> 
+    <br>
+  <% end %>
+</div>

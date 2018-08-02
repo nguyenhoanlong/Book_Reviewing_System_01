@@ -1,4 +1,5 @@
 class Admin::BooksController < ApplicationController
+  layout "admin/application"
   before_action :verify_admin, only: %i(new index add update edit destroy)
   before_action :load_book, only: %i(show update edit destroy)
 
