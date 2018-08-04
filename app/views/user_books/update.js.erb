@@ -1,7 +1,5 @@
 <% if @success %>
   toastr.success(I18n.t('update_success'))
-$('#content-comment-<%= @comment.id %>')
-  .parent().html(`<%= j render "show", comment: @comment %>`)
 <% else %>
   toastr.danger(I18n.t('update_fail'))
 <% end %>

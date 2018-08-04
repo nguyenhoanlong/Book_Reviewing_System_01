@@ -9,8 +9,10 @@
     <% else %>
       <%= image_tag "avatar-default.png", class: "img-avatar", style: "width: 150px" %>
     <% end %>
+    <div class="row">
       <%= t "relationships.follow" %>: <span id="followers"><%= @user.followers.count %></span>
       <%= t "relationships.following" %>: <span id="following"><%= @user.following.count %></span>
+    </div>
     </center>
   <% if @user != current_user %>
     <div id="form-relationship">

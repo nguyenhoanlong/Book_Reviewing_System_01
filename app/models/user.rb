@@ -15,7 +15,7 @@ class User < ApplicationRecord
   has_secure_password
   scope :like_by_name_email, -> (keyword){where("name like ? or email like ?",
     "%#{keyword}%", "%#{keyword}%")}
-  scope :ordered, -> {order(name: :desc)}
+  scope :ordered, -> {order(name: :asc)}
   scope :admin, -> {where(admin: Settings.role_admin)}
   scope :by_comment_ratings, ->(rating_id, curren_user_id){select(:email, :name).distinct.left_outer_joins(:comments)
                               .where("comments.rating_id = #{rating_id} and users.id != #{curren_user_id}")}

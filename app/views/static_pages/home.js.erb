@@ -1,0 +1,6 @@
+<% if @books.blank? %>
+  $(".area-book-home").html("<br><center><h3 style='color:silver'>"+I18n.t('no_record')+"</p></center>")
+<% else %>
+  $(".area-book-home")
+    .html(`<%= j render partial:"category_books/book", collection: @books, as: :book %>`)
+<% end %>

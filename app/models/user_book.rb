@@ -3,7 +3,8 @@ class UserBook < ApplicationRecord
   belongs_to :book
   scope :by_book, -> (book_id, user_id){where(book_id: book_id, user_id: user_id)}
   scope :by_mark, -> (user_id, type){where(user_id: user_id, "#{type}": true)}
-  
+  scope :by_read, -> (book_id){where(book_id: book_id, read: true)}
+  scope :by_mark_book, -> (book_id, type){where(book_id: book_id, "#{type}": true)}  
   def self.case_params user_id, type
     case type
       when "favorite"

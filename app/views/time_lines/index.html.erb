@@ -1,0 +1,14 @@
+<center>
+  <h1 class="review_book"><span><%= t "layout.header.title" %></span></h1>
+</center>
+<% if logged_in?  %>
+  <div class="col-md-9">
+    <%= render partial: "histories/history", collection: @histories, as: :history %>
+  </div>
+<% end %>
+<div class="col-md-3">
+  <center>
+    <h3 class="title-new-book"><%= t "layout.header.new_book" %></h3>
+  </center>
+  <%= render @books %>
+</div>

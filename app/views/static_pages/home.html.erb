@@ -2,13 +2,18 @@
   <h1 class="review_book"><span><%= t "layout.header.title" %></span></h1>
 </center>
 <% if logged_in?  %>
-  <div class="col-md-9">
-    <%= render partial: "histories/history", collection: @histories, as: :history %>
+  <div class="col-md-10 col-md-offset-1">
+    <%= form_tag root_path, method: :get, id: "form_filter" do %>
+      <div class="col-md-6">
+        <%= text_field_tag "txt_filter_book_home", nil, class: "form-control txt_filter_book_home", placeholder: (t "type_something"), id: "txt_filter_book_home" %>
+      </div>
+      <div class="col-md-6">
+        <%= select_tag "category_home", options_from_collection_for_select(Category.all, "id", "title", params[:category]),
+          class: "form-control", include_blank: "Show all book" %>
+      </div>
+    <% end %>
+    <div class="area-book-home">
+      <%= render partial: "category_books/book", collection: @books, as: :book %>
+    </div>
   </div>
 <% end %>
-<div class="col-md-3">
-  <center>
-    <h3 class="title-new-book"><%= t "layout.header.new_book" %></h3>
-  </center>
-  <%= render @books %>
-</div>

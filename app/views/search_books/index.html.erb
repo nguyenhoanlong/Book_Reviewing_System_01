@@ -1,5 +1,6 @@
 <center> 
-  <h3><%= (t "mark.search_result ") + params[:txt_search] %></h3>
+  <h3><%= (t "search_result") + '"' + params[:txt_search] + '"' %></h3>
+  <p style= "color: silver"><%= "#{(t "sum_result")}: #{@books.count}" %></p>
   <hr>
 </center>
 <div class="row">

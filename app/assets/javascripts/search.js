@@ -22,7 +22,7 @@ $(document).on('turbolinks:load', function(){
         url: '/search_users',
         method: 'GET',
         data: {
-          keyword: search,
+          keyword: $.trim(search),
           user_id: user_id,
           from_tab: $('li.active').data('tab_id')
         },

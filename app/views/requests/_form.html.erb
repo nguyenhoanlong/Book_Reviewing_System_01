@@ -18,8 +18,11 @@
         
           <%= f.label :content %>
           <%= f.text_area :content, class: "form-control" %> <br>
-        
-          <%= f.submit yield(:button_text), class: "btn btn-primary form-control"  %>
+          <% if @request.status == Settings.approved || @request.status == Settings.rejected %>
+            <%= f.submit yield(:button_text), class: "btn btn-primary form-control", disabled: true %>
+          <% else %>
+            <%= f.submit yield(:button_text), class: "btn btn-primary form-control" %>
+          <% end %>
         <% end %>
       </div>
     </div>

@@ -8,19 +8,19 @@ class UserBooksController < ApplicationController
     @user_book = current_user.user_books.build user_book_params
     @user_book.book_id = params[:book_id]
     if @user_book.save
-      flash[:success] = t ".update_success"
+      @success = true
       make_history @book, Settings.user_mark_book
     else
-      flash[:danger] = t ".update_fail"
+      @success = false
     end
   end
 
   def update
     if @user_book.update_attributes user_book_params
       make_history @book, Settings.user_mark_book
-      flash[:success] = t ".update_success"
+      @success = true
     else
-      flash[:danger] = t ".update_fail"
+      @success = false
     end
   end
 

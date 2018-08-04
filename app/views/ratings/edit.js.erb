@@ -1,0 +1,5 @@
+$(".modal-backdrop").remove()
+<% provide :button_text, (t "edit")%>
+$('#area-modal').html(`<%= render "form" %>`)
+$("#modalRequest").modal("toggle")
+  

@@ -1,23 +1,44 @@
-<%= form_for [@book, @rating] do |f| %>
-  <%= render "shared/error_messages", object: f.object %>
-
-  <div class="form-group">
-    <label><%= t "ratings.rating_this_book" %></label>
-    <%= f.hidden_field :poin, class: "form-control" %>
-    <div class="area-rate">
-      <%= render "shared/rating_star" %>
+<div class="modal fade" id="modalRequest" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          <%= t "rating.form_rating" %>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </h5>
+      </div>
+      <div class="modal-body">
+        <%= form_for [@book, @rating], remote: true do |f| %>
+          <%= render "shared/error_messages", object: f.object %>
+          <% if @rating.nil? %>
+            <div class="form-group">
+              <label><%= t "ratings.rating_this_book" %></label>
+              <%= f.hidden_field :poin, class: "form-control" %>
+              <div class="area-rate">
+                <%= render "shared/rating_star" %>
+              </div>
+            </div>
+          <% end %>
+        
+          <div class="form-group">
+            <%= f.label :title %>
+            <%= f.text_field :title, class: "form-control" %>
+          </div>
+        
+          <div class="form-group">
+            <%= f.label :content %>
+            <%= f.text_area :content, class: "form-control", rows: 15 %>
+          </div>
+          <center>
+            <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+            <%= f.button "Cancel", class: "btn btn-danger" %> </br>
+          </center>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+      </div>
     </div>
   </div>
-
-  <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :content %>
-    <%= f.text_area :content, class: "form-control", rows: 20 %>
-  </div>
-
-  <%= f.submit (t "users.new.create"), class: "btn btn-primary" %> </br>
-<% end %>
+</div>

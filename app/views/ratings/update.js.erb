@@ -1,0 +1,5 @@
+<% if @success %>
+  toastr.success(I18n.t('update_success'))
+<% else %>
+  toastr.error(I18n.t('update_fail'))
+<% end %>

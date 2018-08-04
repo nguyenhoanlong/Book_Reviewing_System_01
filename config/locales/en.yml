@@ -25,6 +25,8 @@ en:
   no_record: "No record"
   click: "Click"
   detail_book: "Detail book"
+  search_result: "Result search for: "
+  sum_result: "result"
   layout:
     header:
       home: "Home"
@@ -112,13 +114,16 @@ en:
     update_fail: "Update review is fail"
   rating:
     not_found_rating: "Not found rating"
-    comment: "Comment"
+    reply: "Reply"
+    form_rating: "Form rating"
   comments:
     create_success: "Add comment success"
     create_falid: "Add comment fali"
     comment_success: "Add comment successfully"
     comment_fail: "Add comment fail"
   mark:
+    mark_success: "Mark book successfully"
+    mark_fail: "Mark book fail" 
     mark: "Mark this book"
     list_favorite: "List book favorite"
     list_read: "List book read"
@@ -127,7 +132,6 @@ en:
     read: "Read"
     reading: "Reading"
     list_mark: "List mark "
-    search_result: "Result search by keyword: "
   relationships:
     follow_sucess: "Follow successfully"
     follow_fail: "Follow fail"

@@ -22,8 +22,7 @@ class RatingsController < ApplicationController
   def edit; end
 
   def update
-    @rating.update_attributes rating_params
-    if @rating.save 
+    if @rating.update_attributes rating_params
       flash[:success] = t "review.update_success"
       redirect_to @book
     else

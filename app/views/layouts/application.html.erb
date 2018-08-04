@@ -4,7 +4,7 @@
     <title><%= full_title yield :title %></title>
     <%= render "layouts/rails_default" %>
   </head>
-  <body>
+  <body id="body">
     <%= render "layouts/header" %>
     <div class="container">
       <% flash.each do |message_type, content_messages| %>

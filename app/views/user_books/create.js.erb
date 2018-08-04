@@ -1,0 +1,5 @@
+<% if @success %>
+  toastr.success(I18n.t('mark.mark_success'))
+<% else %>
+  toastr.danger(I18n.t('mark.mark_fail'))
+<% end %>

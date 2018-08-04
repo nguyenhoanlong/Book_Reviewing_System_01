@@ -18,9 +18,9 @@ class CommentsController < ApplicationController
     @comment.rating_id = params[:rating_id]
     if @comment.save
       SendEmailToUserCommentWorker.perform_async @rating.id, current_user.id
-      flash[:success] = t "comments.create_success"
+      @success = true
     else
-      flash[:danger] = t "comments.create_falid"
+      @success = false
     end
   
     respond_to do |format|
@@ -33,16 +33,17 @@ class CommentsController < ApplicationController
   def update
     if @comment.update_attributes comment_params
       flash[:success] = t "update_success"
+      @success = true
     else
-      flash[:danger] = t "update_fail"
+      @success = false
     end
   end
 
   def destroy
     if @comment.destroy
-      flash[:success] = t "delete_success"
+      @success = true
     else
-      flash[:danger] = t "delete_faild"
+      @success = false
     end
   end
 

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => "/sidekiq"
 
   root "static_pages#home"
+  get "home", to: "static_pages#home"
   namespace :admin do
     resources :books
     resources :requests, only: %i(edit update index)
@@ -31,6 +32,7 @@ Rails.application.routes.draw do
   resources :search_users, only: %i(index)
   resources :likes, only: %i(create destroy)
   resources :category_books,only: %i(index)
+  resources :time_lines, only: %i(index)
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"

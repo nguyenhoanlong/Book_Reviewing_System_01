@@ -1,4 +1,8 @@
 <div class="col-md-3 border_book">
-  <%= image_tag user_book.book.image.thumb.url, class: "image-book" %>
-  <h5><%= link_to user_book.book.name, user_book.book %></h5>
+  <center>
+    <%= image_tag user_book.book.image.thumb.url, class: "image-cat-book" %>
+  </center>
+  <h5 style=" position: relative; left: 30px; ">
+    <%= link_to user_book.book.name, user_book.book %>
+  </h5>
 </div>

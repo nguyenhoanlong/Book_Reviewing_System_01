@@ -22,10 +22,10 @@
       <div class="col-md-12">
         <%= rating.content %>
           <center class="area-btn-review">
-            <%= link_to (t "rating.comment"), new_book_rating_comment_path(rating.book, rating), class: "btn btn-danger btn-sm add_comment",
+            <%= link_to (t "rating.reply"), new_book_rating_comment_path(rating.book, rating), class: "btn btn-info btn-sm add_comment",
               remote: true, "data-review_id": rating.id %>
             <% if current_user.present? && current_user.id == rating.user_id %>
-              <%= link_to (t "edit"), edit_book_rating_path(rating.book, rating), class: "btn btn-success btn-sm" %>
+              <%= link_to (t "edit"), edit_book_rating_path(rating.book, rating), class: "btn btn-success btn-sm", remote: true %>
             <% end %>
           </center>
         <div id="comment-for-rating-<%= rating.id %>">
