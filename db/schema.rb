@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2018_07_30_062622) do
     t.string "author"
     t.integer "number_of_pages"
     t.float "price"
-    t.integer "category_id"
+    t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_books_on_category_id"
@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 2018_07_30_062622) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
-    t.integer "user_id"
-    t.integer "rating_id"
+    t.bigint "user_id"
+    t.bigint "rating_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["rating_id"], name: "index_comments_on_rating_id"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2018_07_30_062622) do
 
   create_table "histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "activity"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "object_id"
@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(version: 2018_07_30_062622) do
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "history_id"
+    t.bigint "user_id"
+    t.bigint "history_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["history_id"], name: "index_likes_on_history_id"
@@ -66,8 +66,8 @@ ActiveRecord::Schema.define(version: 2018_07_30_062622) do
   create_table "ratings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.float "poin"
     t.text "content"
-    t.integer "user_id"
-    t.integer "book_id"
+    t.bigint "user_id"
+    t.bigint "book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 2018_07_30_062622) do
   create_table "requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
     t.integer "status", default: 0
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name_book"
@@ -98,8 +98,8 @@ ActiveRecord::Schema.define(version: 2018_07_30_062622) do
     t.boolean "favorite", default: false
     t.boolean "reading", default: false
     t.boolean "request", default: false
-    t.integer "user_id"
-    t.integer "book_id"
+    t.bigint "user_id"
+    t.bigint "book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_user_books_on_book_id"
@@ -119,4 +119,15 @@ ActiveRecord::Schema.define(version: 2018_07_30_062622) do
     t.boolean "activated", default: false
   end
 
+  add_foreign_key "books", "categories"
+  add_foreign_key "comments", "ratings"
+  add_foreign_key "comments", "users"
+  add_foreign_key "histories", "users"
+  add_foreign_key "likes", "histories"
+  add_foreign_key "likes", "users"
+  add_foreign_key "ratings", "books"
+  add_foreign_key "ratings", "users"
+  add_foreign_key "requests", "users"
+  add_foreign_key "user_books", "books"
+  add_foreign_key "user_books", "users"
 end

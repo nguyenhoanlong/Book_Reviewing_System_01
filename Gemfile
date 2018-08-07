@@ -30,6 +30,8 @@ gem "whenever", require: false
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "rspec-rails"
+  gem "factory_bot_rails"
 end
 
 group :development do
@@ -43,6 +45,15 @@ group :test do
   gem "capybara", ">= 2.15", "< 4.0"
   gem "chromedriver-helper"
   gem "selenium-webdriver"
+  gem "guard-rspec"
+  gem "launchy"
+  gem "shoulda-matchers", "~> 3.1"
+  gem "database_cleaner"
+end
+
+group :production do
+  gem "pg", "~> 0.18"
+  gem "rails_12factor", "0.0.2"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
