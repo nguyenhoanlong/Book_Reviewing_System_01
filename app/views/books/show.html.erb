@@ -7,18 +7,18 @@
         <%= form_for [@book, @user_book], remote: true do |f| %>
           <div class="form-group">
             <label class="form-control">
-              <%= f.check_box :favorite %> <%= t "mark.favorite" %>
+              <%= f.check_box :favorite, class: "click-mark" %> <%= t "mark.favorite" %>
             </label>
 
             <label class="form-control">
-              <%= f.check_box :read %> <%= t "mark.read" %>
+              <%= f.check_box :read, class: "click-mark" %> <%= t "mark.read" %>
             </label>
             
             <label class="form-control">
-              <%= f.check_box :reading %> <%= t "mark.reading" %>
+              <%= f.check_box :reading, class: "click-mark" %> <%= t "mark.reading" %>
             </label>
 
-            <%= f.submit (t "mark.mark"), class: "btn btn-success btn-mark-book" %>
+            <%= f.submit (t "mark.mark"), class: "btn btn-success btn-mark-book", style: "display: none" %>
           </div>
         <% end %>
       <% end %>

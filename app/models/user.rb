@@ -29,6 +29,8 @@ class User < ApplicationRecord
   validates :email, presence: true, format: {with: VALID_EMAIL_REGEX},
     uniqueness: {case_sensitive: false}
   validates :phone, length: {maximum: Settings.maximum_phone}
+  validates :name, presence: true
+  validates :password, presence: true, length: {minimum: Settings.minimum_password}
 
   def send_activation_email
     UserMailer.account_activation(self).deliver_now
