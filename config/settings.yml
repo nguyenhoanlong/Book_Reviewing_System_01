@@ -1,4 +1,5 @@
 maximum_phone: 11
+minimum_password: 6
 width_thumb_book: 300
 height_thumb_book: 400
 paginate_page: 10
