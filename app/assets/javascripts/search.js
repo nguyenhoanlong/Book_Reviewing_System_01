@@ -12,7 +12,6 @@ $(document).on('turbolinks:load', function(){
       $('.ul-result_search').css('display', 'none')
     }
   })
-
   $('#txt_search_user').bind('focus keyup', function(){
     var search = $(this).val()
     var path = window.location.pathname
